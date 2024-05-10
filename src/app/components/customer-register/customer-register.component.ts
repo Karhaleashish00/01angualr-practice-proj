@@ -3,11 +3,11 @@ import { registerData } from 'src/model/from-data.component';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-customer-register',
+  templateUrl: './customer-register.component.html',
+  styleUrls: ['./customer-register.component.css']
 })
-export class RegisterComponent {
+export class CustomerRegisterComponent {
   constructor(private router: Router) { }
 
   formdata : registerData = new registerData("","","","");
