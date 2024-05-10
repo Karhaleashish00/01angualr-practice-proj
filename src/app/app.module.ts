@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CustomerRegisterComponent } from './components/register/customer-register/customer-register.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
+    FormsModule,
   ],
   exports: [RouterModule],
   providers: [],

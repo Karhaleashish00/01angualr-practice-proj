@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { registerData } from 'src/model/from-data.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -6,31 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  username: String = ''
-  password: String = ''
+  constructor(private router: Router) { }
+
+  formdata : registerData = new registerData("","","","");
   ispassvalid:Boolean = true
 
-  getusername(event: any) {
-    this.username = event.target.value
+  registerUser(){
+    console.log("From Data : ",this.formdata)
   }
-  getpassword(event: any) {
-    let length:Boolean
-    this.password = event.target.value
-    length = this.checkPassword()
-    if(length){
-      this.ispassvalid = length
-    }
-    else{
-      this.ispassvalid = length
-    }
-  }
-
-  checkPassword(){
-    if(this.password.length < 8){
-      return false
-    }
-    else{
-      return true
-    }
+  
+  goToHome(){
+    this.router.navigateByUrl('/')
   }
 }
