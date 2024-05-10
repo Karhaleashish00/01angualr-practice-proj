@@ -2,3 +2,14 @@
     margin: 10px;
     padding: 5px;
 }
+.th-cl{
+    background-color: bisque;
+    color: black;
+}
+.nav-item{
+    font-size: medium;
+    font-weight: 400;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
