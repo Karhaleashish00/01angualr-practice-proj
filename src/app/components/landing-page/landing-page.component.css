@@ -1,15 +1,39 @@
-.nav{
-    margin: 10px;
-    padding: 5px;
-}
+
 .th-cl{
-    background-color: bisque;
+    background-color: bisque !important;
     color: black;
 }
 .nav-item{
-    font-size: medium;
-    font-weight: 400;
+    font-size: large;
+    font-weight: 700;
 }
 .cursor-pointer{
     cursor: pointer;
+}
+.welcome{
+    font-size: 120px;
+    margin: 200px;
+    padding-left: 240px;
+    color:black;
+    background-color: bisque;
+}
+.background-container {
+    background-image: url('src/assets/barbar.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 650px;
+    opacity: 0.6;
+    position: relative;
+  }
+  
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.listings-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }

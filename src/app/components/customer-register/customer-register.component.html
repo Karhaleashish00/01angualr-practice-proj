@@ -24,10 +24,14 @@
             <div class="form-group">
               <label class="label" for="confirmPassword">Confirm Password</label>
               <input type="password" name="user-conf-pass" class="form-control mr-b-15" id="confirmPassword" placeholder="Confirm password" [(ngModel)]="formdata.conformPassword">
+              <span *ngIf="formdata.password != formdata.conformPassword" style="color: red;">Password does not matched</span>
             </div>
             <div class="d-flex justify-content-end">
               <button type="cancel" class="btn btn-primary btn-block js btn-s" (click)="goToHome()">Cancel</button>
-              <button type="submit" class="btn btn-primary btn-block js btn-s" (click)="registerUser()">Register</button>
+              <button type="submit" class="btn btn-primary btn-block js btn-s" (click)="registerCustomer()">Register</button>
+            </div>
+            <div *ngIf="userexist">
+              <span>User already exist</span>
             </div>
           </form>
         </div>

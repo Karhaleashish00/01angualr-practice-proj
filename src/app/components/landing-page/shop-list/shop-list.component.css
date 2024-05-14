@@ -1,0 +1,26 @@
+.rating {
+    color: orange; /* Default color for stars */
+    margin-top: 10px;
+}
+
+.star {
+    font-size: 20px;
+}
+
+.listing {
+    width: calc(33.33% - 25px); /* Adjust width to fit three items per row with margins */
+    margin-top: 10px;
+    background-color: bisque;
+    padding: 10px;
+}
+
+.listing img {
+    width: 150px;
+    height: 100px;
+    margin: 10px;
+}
+
+.info {
+    margin: 10px;
+}
+

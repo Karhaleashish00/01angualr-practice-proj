@@ -1,0 +1,20 @@
+<div class="listing" style="background-color: bisque; margin-left: 25px;width: 720px; margin-top: 10px;" >
+    <img src="{{shops.image}}" alt="Image" style="width: 150px; height: 100px;margin: 10px;padding: 10px;">
+    <div class="info" style="margin: 10px;padding: 10px;">
+        <h2>{{shops.title}}</h2>
+        <p>{{shops.address}}</p>
+        <div class="rating">
+            <span class="star" *ngIf=shops.str1>&#9733;</span>
+            <span class="star" *ngIf=!shops.str1>&#9734;</span>
+            <span class="star" *ngIf=shops.str2>&#9733;</span>
+            <span class="star" *ngIf=!shops.str2>&#9734;</span>
+            <span class="star" *ngIf=shops.str3>&#9733;</span>
+            <span class="star" *ngIf=!shops.str3>&#9734;</span>
+            <span class="star" *ngIf=shops.str4>&#9733;</span>
+            <span class="star" *ngIf=!shops.str4>&#9734;</span>
+            <span class="star" *ngIf=shops.str5>&#9733;</span>
+            <span class="star" *ngIf=!shops.str5>&#9734;</span>
+        </div>        
+    </div>
+</div>
+
