@@ -17,6 +17,6 @@ export class ShopListComponent {
     str3 : boolean,
     str4 : boolean,
     str5 : boolean
-  } = undefined
+  }[] = []
 
 }

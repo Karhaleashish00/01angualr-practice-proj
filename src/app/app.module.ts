@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { ShopListComponent } from './components/landing-page/shop-list/shop-list.component';
 import { CustomerLoginComponent } from './components/customer-login/customer-login.component';
 import { CustomerProfileComponent } from './components/customer-profile/customer-profile.component';
+import { DataViewModule } from 'primeng/dataview';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -31,6 +33,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     FormsModule,
     HttpClientModule,
+    DataViewModule,
+    ScrollPanelModule,
   ],
   exports: [RouterModule],
   providers: [],

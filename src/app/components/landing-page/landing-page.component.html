@@ -1,31 +1,77 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light th-cl" style="padding: 0px;margin: 0px ; height: 50px;">
-    <div class="container-fluid">
-      <div> 
-        <a class="navbar-brand nav-item">Home</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <div class="container-fluid">
+    <div>
+      <a class="navbar-brand nav-item">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item cursor-pointer">
+            <a class="nav-link active nav-item" aria-current="page" (click)="Login()">Login</a>
+          </li>
+          <li class="nav-item cursor-pointer">
+            <a class="nav-link nav-item" (click)="Register()">Register</a>
+          </li>
+        </ul>
       </div>
-      <div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item cursor-pointer">
-              <a class="nav-link active nav-item" aria-current="page" (click)="Login()">Login</a>
-            </li>
-            <li class="nav-item cursor-pointer">
-              <a class="nav-link nav-item" (click)="Register()">Register</a>
-            </li>
-          </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="background-container">
+  <!-- <div class="container">
+     <h1 class="welcome">Welcome</h1> 
+  </div> -->
+</div>
+
+
+<div>
+
+    <div class="container" style="margin-top: 20px;">
+      <div class="row">
+        <div class="col-6">
+          <p-scrollPanel [style]="{ width: '100%', height: '720px' }">
+          <div class="listings-container">
+            <app-shop-list [shops]="shops"></app-shop-list>
+          </div>
+        </p-scrollPanel>
+        </div>
+        <div class="col-6">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi labore laboriosam dolorum, nesciunt
+            voluptatibus illo voluptatem aperiam! Vel illum architecto quos amet molestias deleniti hic aperiam, enim
+            alias, aliquid cupiditate iusto! Dolores expedita iste eaque aperiam incidunt iure blanditiis distinctio
+            fugit quas cumque praesentium tempora dolorem, nam nobis et fugiat, eligendi facilis saepe voluptatum vel
+            doloribus, consequuntur beatae! Voluptatibus voluptas quas, error, totam illum debitis vel sequi fugiat
+            perspiciatis ratione aliquid deserunt, maiores quaerat doloremque expedita! Perferendis, molestiae? Adipisci
+            dolore omnis nostrum! Nostrum, ut! In fugit velit eveniet quaerat iusto asperiores, harum esse ex. Error
+            voluptates corrupti, incidunt, dolores libero dignissimos officia adipisci ducimus molestiae, esse omnis
+            earum repudiandae provident obcaecati similique ipsa. Dolor aliquid et enim maiores qui nemo magnam
+            laboriosam aspernatur iure vitae adipisci neque excepturi, laudantium porro reiciendis. Eaque iure ut
+            voluptatum ex, veniam sint, alias nihil porro fugiat consequuntur tempore voluptatibus cupiditate provident
+            ad impedit saepe excepturi ipsa labore nisi explicabo atque vel eos. Nihil esse consequuntur quibusdam modi,
+            quod ipsa iure, enim in quasi debitis assumenda velit reiciendis minus vel rem, architecto facere at?
+            Nesciunt sint dolores at deserunt labore, officia incidunt, quaerat libero eius culpa doloremque repellat
+            quasi sunt non ipsum nulla temporibus dolorum commodi a. Quae eum aperiam commodi ratione corrupti facere
+            cupiditate culpa soluta cum, voluptas nam officiis iusto porro minus impedit modi voluptatem expedita et
+            ducimus! Qui, dolor! Odit exercitationem, ipsum quo molestiae quisquam aliquam minima suscipit rerum
+            perferendis, amet porro ducimus quia cumque, voluptatibus fugiat possimus quae ipsa voluptates quos maxime.
+            Maiores eum sunt tempore. Nam, sint laboriosam quis expedita illum reprehenderit deserunt vitae est dolores
+            quidem ea, voluptas non esse aperiam nobis voluptatem voluptatum libero tempore quo quos quod cumque
+            molestiae perspiciatis quaerat. Velit dolores molestias, laudantium debitis unde praesentium! Maiores,
+            facilis similique! Aliquam commodi adipisci quos quidem quas necessitatibus eum non culpa nulla iste error,
+            tempora dolore, sit, corporis consequuntur maiores omnis eaque ratione voluptatibus laudantium? Architecto
+            quam totam voluptas modi delectus consequuntur perferendis expedita explicabo magni magnam ullam ut
+            inventore voluptate, est impedit dolor! Odit magnam animi rerum reprehenderit tempora? Iusto, et. Id ducimus
+            porro architecto voluptas numquam, dicta voluptates quisquam aliquam unde autem iure vitae repellat quae nam
+            odit temporibus suscipit magni eligendi nobis quos animi? Veniam harum doloribus error qui. Quidem,
+            blanditiis quasi. Laudantium laboriosam nisi delectus doloribus molestias, sequi pariatur architecto placeat
+            porro vel itaque eius ex, illum minima cupiditate! Necessitatibus debitis cupiditate nemo!</p>
         </div>
       </div>
     </div>
-  </nav>
- 
-<div class="background-container">
-  <div class="container">
-    <h1 class="welcome">Welcome</h1>
-  </div>
-</div>
-<div class="listings-container">
-  <app-shop-list *ngFor="let shop of shops" [shops]="shop"></app-shop-list>
+
 </div>
