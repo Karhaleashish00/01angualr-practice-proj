@@ -10,7 +10,8 @@
 .listing {
     width: calc(33.33% - 25px); /* Adjust width to fit three items per row with margins */
     margin-top: 10px;
-    background-color: bisque;
+    background-color: white;
+    color: black;
     padding: 10px;
 }
 
@@ -23,4 +24,3 @@
 .info {
     margin: 10px;
 }
-
