@@ -11,6 +11,7 @@ import { CustomerLoginComponent } from './components/customer-login/customer-log
 import { CustomerProfileComponent } from './components/customer-profile/customer-profile.component';
 import { DataViewModule } from 'primeng/dataview';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
+import { NavbarComponent } from './components/landing-page/navbar/navbar.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
     ShopListComponent,
     CustomerLoginComponent,
     CustomerProfileComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
