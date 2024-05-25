@@ -1,3 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 /* Inside src/styles.css */
 @import "~bootstrap/dist/css/bootstrap.css";
+@import '~primeng/resources/themes/saga-blue/theme.css'; 
+@import '~primeng/resources/primeng.min.css';
+@import '~primeicons/primeicons.css';
+

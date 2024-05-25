@@ -17,10 +17,10 @@
         </div>        
     </div>
 </div> -->
-<p-dataView [value]="shops">
+<p-dataView [value]="shops" [paginator]="true" [rows]="5">
     <ng-template pTemplate="header">
         <div class="flex justify-content-end">
-            <p-dataViewLayoutOptions/>
+            <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
         </div>
     </ng-template>
     

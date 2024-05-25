@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @Component({
@@ -78,11 +79,5 @@ export class LandingPageComponent {
     }
   ]
   constructor(private router: Router) { }
-  Register(){
-    this.router.navigateByUrl('/register');
-  }
-
-  Login(){
-    this.router.navigateByUrl('/login')
-  }
+  
 }
