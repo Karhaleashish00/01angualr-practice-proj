@@ -1,0 +1,21 @@
+.label{
+    padding: 10px;
+    font-weight: 700;
+}
+
+.mr-b-15{
+    margin-bottom: 15px;
+}
+
+.btn-s{
+    margin-left: 5px;
+    margin-right: 
+    5px;background-color: bisque;
+    color: black;
+    border-color: bisque;
+}
+
+.th-cl{
+    background-color: bisque;
+    color: black;
+}

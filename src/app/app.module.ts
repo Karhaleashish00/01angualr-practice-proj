@@ -12,12 +12,16 @@ import { CustomerProfileComponent } from './components/customer-profile/customer
 import { DataViewModule } from 'primeng/dataview';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { NavbarComponent } from './components/landing-page/navbar/navbar.component';
+import { ShopLoginComponent } from './components/shop-login/shop-login.component';
+import { ShopRegisterComponent } from './components/shop-register/shop-register.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'register', component: CustomerRegisterComponent },
   { path: 'login', component: CustomerLoginComponent},
-  { path: 'customerProfile' , component:CustomerProfileComponent}
+  { path: 'customerProfile' , component:CustomerProfileComponent},
+  { path: 'shopLogin' , component:ShopLoginComponent},
+  { path: 'shopRegister' , component:ShopRegisterComponent}
 ];
 
 @NgModule({
@@ -29,6 +33,8 @@ const routes: Routes = [
     CustomerLoginComponent,
     CustomerProfileComponent,
     NavbarComponent,
+    ShopLoginComponent,
+    ShopRegisterComponent,
   ],
   imports: [
     BrowserModule,
