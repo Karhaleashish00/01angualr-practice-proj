@@ -1,30 +1,23 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpService } from './../../http.service';
-import { registerData } from 'src/model/from-data.component';
-import { HttpHeaders } from '@angular/common/http';
+import { HttpService } from 'src/app/http.service';
 
 @Component({
-  selector: 'app-customer-login',
-  templateUrl: './customer-login.component.html',
-  styleUrls: ['./customer-login.component.css']
+  selector: 'app-shop-login',
+  templateUrl: './shop-login.component.html',
+  styleUrls: ['./shop-login.component.css']
 })
-export class CustomerLoginComponent {
+export class ShopLoginComponent {
   data : {
     'email':string,
     'password':string
   }={email:'',password:''};
   isvalidUser:boolean = false
-  msg:string=''
 
   constructor(private router:Router,private httpService:HttpService){}
 
   goToHome(){
     this.router.navigateByUrl('/')
-  }
-
-  gotoshoplogin(){
-    this.router.navigateByUrl('/shopLogin')
   }
 
   loginUser(){
