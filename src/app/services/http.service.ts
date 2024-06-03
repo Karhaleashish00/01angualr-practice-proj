@@ -14,7 +14,15 @@ export class HttpService {
     return this.http.post(this.baseUrl + '/registerCustomer',object)
   }
 
+  registerShop(object){
+    return this.http.post(this.baseUrl + '/registerShop',object)
+  }
+
   getCustomerRegisters(object){
     return this.http.post(this.baseUrl + '/getCustomerRegisters',object)
+  }
+
+  getShopRegisters(object){
+    return this.http.post(this.baseUrl + '/getShopRegisters',object)
   }
 }

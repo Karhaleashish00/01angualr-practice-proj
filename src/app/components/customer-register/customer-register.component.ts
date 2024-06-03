@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { registerData } from 'src/model/from-data.component';
 import { Router } from '@angular/router';
-import { HttpService } from './../../http.service';
+import { HttpService } from './../../services/http.service';
 
 
 @Component({
@@ -25,6 +25,9 @@ export class CustomerRegisterComponent {
     this.router.navigateByUrl('/')
   }
 
+  gotoshopregister(){
+    this.router.navigateByUrl('/shopRegister')
+  }
   
   registerCustomer(){
       this.httpService.registerCustomer(this.formdata).subscribe((res : any)=>{

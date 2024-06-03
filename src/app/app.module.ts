@@ -15,6 +15,7 @@ import { NavbarComponent } from './components/landing-page/navbar/navbar.compone
 import { ShopLoginComponent } from './components/shop-login/shop-login.component';
 import { ShopRegisterComponent } from './components/shop-register/shop-register.component';
 
+
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'register', component: CustomerRegisterComponent },

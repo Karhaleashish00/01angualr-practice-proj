@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpService } from './../../http.service';
+import { HttpService } from './../../services/http.service';
 import { registerData } from 'src/model/from-data.component';
 import { HttpHeaders } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-customer-login',
@@ -29,8 +30,10 @@ export class CustomerLoginComponent {
 
   loginUser(){
     this.httpService.getCustomerRegisters(this.data).subscribe((res:any)=>{
-      this.isvalidUser = res.isvalidUser
-      this.router.navigateByUrl('/customerProfile')
+      this.isvalidUser = res.validUser
+      if(this.isvalidUser){
+        this.router.navigateByUrl('/customerProfile')
+      }
     },
     (error:any)=>{
       if(error === 400){

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpService } from 'src/app/http.service';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-shop-login',
@@ -20,10 +20,16 @@ export class ShopLoginComponent {
     this.router.navigateByUrl('/')
   }
 
+  gotocustomerlogin(){
+    this.router.navigateByUrl('/login')
+  }
+
   loginUser(){
-    this.httpService.getCustomerRegisters(this.data).subscribe((res:any)=>{
-      this.isvalidUser = res.isvalidUser
-      this.router.navigateByUrl('/customerProfile')
+    this.httpService.getShopRegisters(this.data).subscribe((res:any)=>{
+      this.isvalidUser = res.validUser
+      if(this.isvalidUser){
+        this.router.navigateByUrl('/customerProfile')
+      }
     },
     (error:any)=>{
       if(error === 400){
