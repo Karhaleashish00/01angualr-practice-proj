@@ -11,6 +11,7 @@ import { CustomerLoginComponent } from './components/customer-login/customer-log
 import { CustomerProfileComponent } from './components/customer-profile/customer-profile.component';
 import { DataViewModule } from 'primeng/dataview';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
+import { TabViewModule } from 'primeng/tabview';
 import { NavbarComponent } from './components/landing-page/navbar/navbar.component';
 import { ShopLoginComponent } from './components/shop-login/shop-login.component';
 import { ShopRegisterComponent } from './components/shop-register/shop-register.component';
@@ -44,6 +45,7 @@ const routes: Routes = [
     HttpClientModule,
     DataViewModule,
     ScrollPanelModule,
+    TabViewModule,
   ],
   exports: [RouterModule],
   providers: [],

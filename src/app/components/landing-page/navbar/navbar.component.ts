@@ -7,13 +7,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  constructor(private router: Router){}
+  public islogin:Boolean = false
+  constructor(private router: Router){
+    this.islogin = false
+    if(localStorage.getItem('token')){
+      this.islogin = true
+    }
+  }
 
   Register(){
     this.router.navigateByUrl('/register');
   }
 
+  gotoProfile(){
+    this.router.navigateByUrl('/customerProfile')
+  }
+
   Login(){
-    this.router.navigateByUrl('/login')
+    if(localStorage.getItem('token')){
+      this.router.navigateByUrl('/customerProfile')
+    }
+    else{
+      this.router.navigateByUrl('/login')
+    }
   }
 }

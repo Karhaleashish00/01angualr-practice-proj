@@ -27,6 +27,7 @@ export class ShopLoginComponent {
   loginUser(){
     this.httpService.getShopRegisters(this.data).subscribe((res:any)=>{
       this.isvalidUser = res.validUser
+      localStorage.setItem('token', res.token);
       if(this.isvalidUser){
         this.router.navigateByUrl('/customerProfile')
       }

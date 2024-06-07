@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { HttpService } from './../../services/http.service';
 import { registerData } from 'src/model/from-data.component';
 import { HttpHeaders } from '@angular/common/http';
+import { Token } from '@angular/compiler';
 
 
 @Component({
@@ -31,6 +32,8 @@ export class CustomerLoginComponent {
   loginUser(){
     this.httpService.getCustomerRegisters(this.data).subscribe((res:any)=>{
       this.isvalidUser = res.validUser
+      localStorage.setItem('token', res.token);
+      console.log("token : ", localStorage.getItem('token'));
       if(this.isvalidUser){
         this.router.navigateByUrl('/customerProfile')
       }
