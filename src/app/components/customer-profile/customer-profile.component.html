@@ -1,1 +1,60 @@
-<p>customer-profile works!</p>
+<div class="container-fluid" style="margin: 0px; background-color: bisque;">
+    <div class="row">
+        <div class="d-flex justify-content-end">
+            <button (click)="gotoHome()" style="width: 80px;height: 40px; margin-top: 25px;margin-right: 25px; color: white;background-color: #2196F3;border-radius: 8%; border:#2196F3;">Home</button>
+            <button (click)=logout() style="width: 80px;height: 40px; margin-top: 25px;margin-right: 25px;color: white;background-color: #2196F3;border-radius: 8%; border:#2196F3;">Log out</button>
+        </div>
+        <div class="col-12">
+            <div  class="d-flex justify-content-start">
+                <div>
+                    <img src="assets/barbar.jpg" alt="" class="rounded-circle"
+                    style="width: 150px;height: 150px;margin: 10px;align-items: center;">
+                    <h1>Username</h1>
+                </div>
+                <div style="margin: 100px; align-self: center;">
+                    <h4><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, debitis?</p></h4>                </div>
+                </div>
+        </div>
+        <i class="pi pi-pencil" (click)="edit()"  style="cursor: pointer; font-size: 1rem; margin-bottom: 20px;"> Edit</i>
+    </div>
+</div>
+<div class="container-fluid" style="margin: 0px;">
+    <div class="row">
+        <div class="col-6" id="personalDetails" hidden>
+            <form>
+                <div class="form-group">
+                    <label class="label" for="Name">Username</label>
+                    <input  type="text" name="user-name" class="form-control mr-b-15" placeholder="Ashish">
+                </div>
+                <div class="form-group">
+                    <label class="label" for="Name">Dialog</label>
+                    <input type="text" name="user-mail" class="form-control mr-b-15">
+                </div>
+                <div class="form-group">
+                    <label class="label" for="Name">Email</label>
+                    <input type="text" name="user-address" class="form-control mr-b-15">
+                </div>
+            </form>
+            <button *ngIf="enablesave" style="width: 80px;height: 40px;color: white;background-color: #2196F3;border-radius: 8%; border:#2196F3;margin: 5px;">Save</button>
+        </div>
+        <div class="col-12" id="gallery">
+            <p-tabView> 
+                <p-tabPanel header="Header I" style="width: 400px !important;">
+                    <p>
+                        Lorem ipsum dolor sit amet...
+                    </p>
+                </p-tabPanel>
+                <p-tabPanel header="Header II">
+                    <p>
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...
+                    </p>
+                </p-tabPanel>
+                <p-tabPanel header="Header III">
+                    <p>
+                        At vero eos et accusamus et iusto odio dignissimos...
+                    </p>
+                </p-tabPanel>
+            </p-tabView>
+        </div>
+    </div>
+</div>
