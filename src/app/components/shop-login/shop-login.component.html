@@ -13,8 +13,12 @@
                 <input type="email" name="user-mail" class="form-control mr-b-15" id="login-email" placeholder="Enter email" [(ngModel)]="data.email">
               </div>
               <div class="form-group">
-                <label class="label" for="password">Password</label>
-                <input type="password" name="user-password" class="form-control mr-b-15" id="login-password" placeholder="Enter password" [(ngModel)]="data.password">
+                <label class="label" for="password">Password</label><br>
+                <div class="form-control mr-b-15" style="display: flex;align-items: end;">
+                  <input type="{{ isvisible ? 'text' : 'password' }}" name="user-password" id="login-password" style="border: none;flex: 1;outline: none;" placeholder="Enter password" [(ngModel)]="data.password">              
+                  <i *ngIf="!isvisible" class="pi pi-eye" style="cursor: pointer;" (click)="togglechange()"></i>
+                  <i *ngIf="isvisible" class="pi pi-eye-slash" style="cursor: pointer;" (click)="togglechange()"></i>
+                </div>
               </div>
               <div class="d-flex justify-content-end">
                 <button type="cancel" class="btn btn-primary btn-block js btn-s"(click)=goToHome()>Cancel</button>

@@ -19,3 +19,7 @@
     background-color: bisque;
     color: black;
 }
+
+.p-password{
+    width: 600px !important;
+}

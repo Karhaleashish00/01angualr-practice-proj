@@ -15,7 +15,9 @@ import { TabViewModule } from 'primeng/tabview';
 import { NavbarComponent } from './components/landing-page/navbar/navbar.component';
 import { ShopLoginComponent } from './components/shop-login/shop-login.component';
 import { ShopRegisterComponent } from './components/shop-register/shop-register.component';
-
+import { RegmsgComponent } from './components/customer-register/regmsg/regmsg.component';
+import { CardModule } from 'primeng/card';
+import { PasswordModule } from 'primeng/password';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -23,7 +25,8 @@ const routes: Routes = [
   { path: 'login', component: CustomerLoginComponent},
   { path: 'customerProfile' , component:CustomerProfileComponent},
   { path: 'shopLogin' , component:ShopLoginComponent},
-  { path: 'shopRegister' , component:ShopRegisterComponent}
+  { path: 'shopRegister' , component:ShopRegisterComponent},
+  { path: 'regmsg', component:RegmsgComponent}
 ];
 
 @NgModule({
@@ -37,6 +40,7 @@ const routes: Routes = [
     NavbarComponent,
     ShopLoginComponent,
     ShopRegisterComponent,
+    RegmsgComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +50,8 @@ const routes: Routes = [
     DataViewModule,
     ScrollPanelModule,
     TabViewModule,
+    CardModule,
+    PasswordModule,
   ],
   exports: [RouterModule],
   providers: [],

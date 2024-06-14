@@ -12,12 +12,17 @@ export class ShopLoginComponent {
     'email':string,
     'password':string
   }={email:'',password:''};
+  isvisible : boolean = false
   isvalidUser:boolean = false
 
   constructor(private router:Router,private httpService:HttpService){}
 
   goToHome(){
     this.router.navigateByUrl('/')
+  }
+
+  togglechange(){
+    this.isvisible = !this.isvisible
   }
 
   gotocustomerlogin(){

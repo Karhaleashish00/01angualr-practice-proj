@@ -39,22 +39,4 @@ constructor(private router:Router){}
       this.isDetailsHide = true
     }
   }
-
-  // viewdetails(){
-  //   this.isDetailsHide= false
-  //   const perDetailsEle : HTMLElement = document.getElementById('personalDetails')
-  //   const gallery : HTMLElement = document.getElementById('gallery')
-  //   perDetailsEle.hidden = false
-  //   gallery.classList.remove('col-12')
-  //   gallery.classList.add('col-6')
-  // }
-
-  // closedetails(){
-  //   this.isDetailsHide = true
-  //   const perDetailsEle : HTMLElement = document.getElementById('personalDetails')
-  //   const gallery : HTMLElement = document.getElementById('gallery')
-  //   perDetailsEle.hidden = true
-  //   gallery.classList.remove('col-6')
-  //   gallery.classList.add('col-12')
-  // }
 }

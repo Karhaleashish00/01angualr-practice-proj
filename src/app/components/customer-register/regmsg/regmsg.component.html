@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="d-flex justify-content-center">
+        <div style="height: 300px; width: 400px; margin-top: 200px;">
+            <p-card>
+                <div class="d-flex justify-content-center">
+                    <span *ngIf="flag"><img src="../../../../assets/success-icon-10.png" alt="" style="height: 100px;width: 100px;"></span>
+                    <span *ngIf="!flag"><img src="../../../../assets/userexist.png" alt="" style="height: 100px;width: 100px;"></span>
+                </div>
+                <div class="d-flex justify-content-center" style="margin: 10px;">
+                    <p>
+                        {{msg}}
+                    </p>
+                </div>
+            </p-card>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <button (click)="gotoHome()" style="width: 80px;height: 40px;color: white;background-color: #2196F3;border-radius: 8%; border:#2196F3;">HOME</button>
+    </div>
+</div>
