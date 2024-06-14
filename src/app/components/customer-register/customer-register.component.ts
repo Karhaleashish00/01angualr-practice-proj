@@ -17,7 +17,6 @@ export class CustomerRegisterComponent {
 
   formdata : registerData = new registerData("","","","");
   ispassvalid:Boolean = true
-  msg : string=''
   userexist:boolean = false
 
 
@@ -32,10 +31,14 @@ export class CustomerRegisterComponent {
   registerCustomer(){
       this.httpService.registerCustomer(this.formdata).subscribe((res : any)=>{
         this.userexist = false
+        const msg = { message :"You are register sucessfully",flag:'green'}
+        this.router.navigate(['/regmsg'], {state :msg});
       },
       (error:any) => {
-        if(error.status === 400){
+        if(error.status === 409){
           this.userexist = true
+          const msg = { message :"User already exist", flag:'red'}
+          this.router.navigate(['/regmsg'], {state : msg});
         }
       }
     );
