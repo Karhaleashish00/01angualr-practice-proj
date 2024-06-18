@@ -1,23 +1,59 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-customer-profile',
   templateUrl: './customer-profile.component.html',
   styleUrls: ['./customer-profile.component.css']
 })
-export class CustomerProfileComponent {
+export class CustomerProfileComponent implements OnInit{
+
+public dialog: string
 
 public isDetailsHide:Boolean =true
 public enablesave:boolean = false
+private user:{}
+uploadedFiles: any[] = [];
+public userProfile:{}={}
+imgurl = "assets/" + this.userProfile['filepath']
 
-constructor(private router:Router){}
+constructor(private router:Router,private httpservice: HttpService){  
+  const navigation = this.router.getCurrentNavigation();
+  const state = navigation?.extras.state
+  this.user = state
+}
+
+  ngOnInit(): void {
+    if(localStorage.getItem('userid')){
+      this.httpservice.getCustomerProfile({'_id':localStorage.getItem('userid')}).subscribe((res:any)=>{
+        this.userProfile = res.user
+        this.imgurl = "assets/" + this.userProfile['filename']
+      });
+    }
+    else{
+      this.httpservice.getCustomerProfile(this.user).subscribe((res:any)=>{        
+        this.userProfile = res.user
+        this.imgurl = "assets/" + this.userProfile['filename']
+        localStorage.setItem('userid',this.userProfile['_id'])        
+      });
+    }
+  }
+
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('userid');
     this.router.navigateByUrl('/')
   }
   gotoHome(){
     this.router.navigateByUrl('/')
+  }
+
+  savedetails(){
+    this.httpservice.setCustomerDetails({'dialog': this.dialog,'_id':localStorage.getItem('userid')}).subscribe((res:any)=>{
+      console.log('response : ',res);
+      
+    })
   }
 
   edit(){
@@ -38,5 +74,13 @@ constructor(private router:Router){}
       gallery.classList.add('col-12')
       this.isDetailsHide = true
     }
+  }
+  onUploadfile(event){
+    this.uploadedFiles.push(event.files[0]) 
+    this.httpservice.setCustomerProfileImage(event.files[0]).subscribe((res:any)=>{
+      console.log(res);
+    }) 
+    console.log(this.uploadedFiles);
+     
   }
 }

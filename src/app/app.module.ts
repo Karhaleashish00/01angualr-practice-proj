@@ -18,6 +18,7 @@ import { ShopRegisterComponent } from './components/shop-register/shop-register.
 import { RegmsgComponent } from './components/customer-register/regmsg/regmsg.component';
 import { CardModule } from 'primeng/card';
 import { PasswordModule } from 'primeng/password';
+import { FileUploadModule } from 'primeng/fileupload';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -52,6 +53,7 @@ const routes: Routes = [
     TabViewModule,
     CardModule,
     PasswordModule,
+    FileUploadModule,
   ],
   exports: [RouterModule],
   providers: [],

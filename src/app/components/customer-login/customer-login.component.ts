@@ -39,7 +39,7 @@ export class CustomerLoginComponent {
       localStorage.setItem('token', res.token);
       console.log("token : ", localStorage.getItem('token'));
       if(this.isvalidUser){
-        this.router.navigateByUrl('/customerProfile')
+        this.router.navigate(['/customerProfile'],{state:this.data})
       }
     },
     (error:any)=>{

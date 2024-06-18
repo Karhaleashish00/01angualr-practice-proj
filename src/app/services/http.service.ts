@@ -25,4 +25,18 @@ export class HttpService {
   getShopRegisters(object){
     return this.http.post(this.baseUrl + '/getShopRegisters',object)
   }
+
+  getCustomerProfile(object){
+    return this.http.post(this.baseUrl + '/getCustomerProfile',object)
+  }
+  setCustomerDetails(object){
+    return this.http.post(this.baseUrl + '/setcustomerdetail',object )
+  }
+  setCustomerProfileImage(file:File){
+    console.log("I am here in setCustomerProfileImage");
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    formData.append('_id',localStorage.getItem('userid'))
+    return this.http.post(this.baseUrl + '/setCustomerProfileImage',formData,)
+  }
 }
