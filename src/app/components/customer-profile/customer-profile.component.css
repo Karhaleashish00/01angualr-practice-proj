@@ -1,0 +1,11 @@
+.outer-div{
+    margin-right: 100px;
+    margin-left: 100px;
+    margin-top: 10px;
+}
+.btn{
+    font-weight: 600
+}
+.num{
+    padding: 6px 12px;
+}
