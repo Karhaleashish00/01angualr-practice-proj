@@ -37,6 +37,7 @@ export class CustomerLoginComponent {
     this.httpService.getCustomerRegisters(this.data).subscribe((res:any)=>{
       this.isvalidUser = res.validUser
       localStorage.setItem('token', res.token);
+      localStorage.setItem('usertype','customer')
       console.log("token : ", localStorage.getItem('token'));
       if(this.isvalidUser){
         this.router.navigate(['/customerProfile'],{state:this.data})

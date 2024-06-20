@@ -20,7 +20,12 @@ export class NavbarComponent {
   }
 
   gotoProfile(){
-    this.router.navigateByUrl('/customerProfile')
+    if(localStorage.getItem('usertype')==="customer"){
+      this.router.navigateByUrl('/customerProfile')
+    }
+    else{
+      this.router.navigateByUrl('/shopProfile')
+    }
   }
 
   Login(){

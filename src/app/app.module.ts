@@ -19,6 +19,7 @@ import { RegmsgComponent } from './components/customer-register/regmsg/regmsg.co
 import { CardModule } from 'primeng/card';
 import { PasswordModule } from 'primeng/password';
 import { FileUploadModule } from 'primeng/fileupload';
+import { ShopProfileComponent } from './components/shop-profile/shop-profile.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -27,7 +28,8 @@ const routes: Routes = [
   { path: 'customerProfile' , component:CustomerProfileComponent},
   { path: 'shopLogin' , component:ShopLoginComponent},
   { path: 'shopRegister' , component:ShopRegisterComponent},
-  { path: 'regmsg', component:RegmsgComponent}
+  { path: 'regmsg', component:RegmsgComponent},
+  { path: 'shopProfile',component:ShopProfileComponent}
 ];
 
 @NgModule({
@@ -42,6 +44,7 @@ const routes: Routes = [
     ShopLoginComponent,
     ShopRegisterComponent,
     RegmsgComponent,
+    ShopProfileComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, } from '@angular/core';
 
 
 @Component({
@@ -8,16 +8,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ShopListComponent {
   @Input()
-  shops:{
-    image : string,
-    title : string,
-    address : string,
-    stars :number,
-    str1 : boolean,
-    str2 : boolean,
-    str3 : boolean,
-    str4 : boolean,
-    str5 : boolean
-  }[] = []
-
-}
+  shops:any 
+} 
