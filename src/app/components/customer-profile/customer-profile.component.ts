@@ -16,7 +16,7 @@ public enablesave:boolean = false
 private user:{}
 uploadedFiles: any[] = [];
 public userProfile:{}={}
-imgurl = "assets/" + this.userProfile['filepath']
+imgurl = "assets/" + this.userProfile['filename']
 
 constructor(private router:Router,private httpservice: HttpService){  
   const navigation = this.router.getCurrentNavigation();

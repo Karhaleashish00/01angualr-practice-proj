@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HttpService } from 'src/app/services/http.service';
 
 
 @Component({
@@ -9,7 +10,8 @@ import { NavbarComponent } from './navbar/navbar.component';
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.css']
 })
-export class LandingPageComponent {
+export class LandingPageComponent implements OnInit {
+  shop:{}={}
   shops = [
     {
       image : "assets/barbar.jpg",
@@ -78,6 +80,12 @@ export class LandingPageComponent {
       str5 : false
     }
   ]
-  constructor(private router: Router) { }
+  constructor(private router: Router,private httpservice:HttpService) { }
+  ngOnInit(){
+    this.httpservice.getAllShopRegisters().subscribe((res)=>{
+      console.log("shops : ", res);
+      this.shop = res
+    })
+  }
   
 }

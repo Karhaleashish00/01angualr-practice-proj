@@ -33,8 +33,10 @@ export class ShopLoginComponent {
     this.httpService.getShopRegisters(this.data).subscribe((res:any)=>{
       this.isvalidUser = res.validUser
       localStorage.setItem('token', res.token);
+      localStorage.setItem('userid',res.id)
+      localStorage.setItem('usertype','shop')
       if(this.isvalidUser){
-        this.router.navigateByUrl('/customerProfile')
+        this.router.navigateByUrl('/shopProfile')
       }
     },
     (error:any)=>{
