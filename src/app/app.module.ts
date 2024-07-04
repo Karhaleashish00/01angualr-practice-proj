@@ -20,6 +20,7 @@ import { CardModule } from 'primeng/card';
 import { PasswordModule } from 'primeng/password';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ShopProfileComponent } from './components/shop-profile/shop-profile.component';
+import { SplitterModule } from 'primeng/splitter';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -57,6 +58,7 @@ const routes: Routes = [
     CardModule,
     PasswordModule,
     FileUploadModule,
+    SplitterModule,
   ],
   exports: [RouterModule],
   providers: [],

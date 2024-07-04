@@ -51,8 +51,7 @@ constructor(private router:Router,private httpservice: HttpService){
 
   savedetails(){
     this.httpservice.setCustomerDetails({'dialog': this.dialog,'_id':localStorage.getItem('userid')}).subscribe((res:any)=>{
-      console.log('response : ',res);
-      
+      this.ngOnInit()
     })
   }
 
@@ -78,9 +77,7 @@ constructor(private router:Router,private httpservice: HttpService){
   onUploadfile(event){
     this.uploadedFiles.push(event.files[0]) 
     this.httpservice.setCustomerProfileImage(event.files[0]).subscribe((res:any)=>{
-      console.log(res);
     }) 
-    console.log(this.uploadedFiles);
-     
+    this.ngOnInit()
   }
 }

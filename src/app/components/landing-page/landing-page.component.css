@@ -1,40 +1,55 @@
-
-.th-cl{
-    background-color: white !important;
-    color: black;
-}
-.nav-item{
-    font-size: large;
-    font-weight: 700;
-}
-.cursor-pointer{
-    cursor: pointer;
-}
-.welcome{
-    font-size: 120px;
-    margin: 200px;
-    padding-left: 240px;
-    color:black;
-    background-color: white;
-}
-.background-container {
-    background-image: url('src/assets/barbar-shop.avif');
-    background-size: cover;
-    background-position: center;
-    height: 650px;
-    /* opacity: 0.6; */
-    position: relative;
+/* Basic styles */
+body {
+    margin: 0 ;
+    font-family: Arial, sans-serif;
   }
   
-/* .container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} */
-.listings-container {
+  .main-container {
+    margin: 10px 0px;
+    padding: 0 20px;
+  }
+  
+  .container {
+    margin-top: 20px;
+  }
+  
+  /* Grid system */
+  .row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-}
-
+    margin: 0 -10px;
+  }
+  
+  .col-4, .col-8 {
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Scroll panel style */
+  .scroll-panel {
+    width: 100%;
+    height: 720px;
+    overflow-y: auto;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 1200px) {
+    .col-4 {
+      flex: 0 0 33.33%;
+    }
+  
+    .col-8 {
+      flex: 0 0 66.67%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .col-4, .col-8 {
+      flex: 0 0 100%;
+    }
+  
+    .scroll-panel {
+      height: auto;
+    }
+  }
+  

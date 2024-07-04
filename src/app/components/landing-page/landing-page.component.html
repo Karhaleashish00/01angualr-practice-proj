@@ -1,25 +1,19 @@
-<div style="margin-left: 100px;margin-right: 100px;">
+<div class="main-container">
   <app-navbar></app-navbar>
 
-<!-- <div class="background-container">
-  <!-- <div class="container">
-     <h1 class="welcome">Welcome</h1> 
-  </div>
-</div> -->
-
-
-<div>
-    <div class="container" style="margin-top: 20px;">
+  <div class="content">
+    <div class="container">
       <div class="row">
         <div class="col-4">
-          <p-scrollPanel [style]="{ width: '100%', height: '720px' }">
-          <div class="listings-container">
-            <app-shop-list [shops]="shop"></app-shop-list>
-          </div>
-        </p-scrollPanel>
+          <p-scrollPanel class="scroll-panel">
+            <div class="listings-container">
+              <app-shop-list [shops]="shop"></app-shop-list>
+            </div>
+          </p-scrollPanel>
         </div>
         <div class="col-8">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi labore laboriosam dolorum, nesciunt
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi labore laboriosam dolorum, nesciunt
             voluptatibus illo voluptatem aperiam! Vel illum architecto quos amet molestias deleniti hic aperiam, enim
             alias, aliquid cupiditate iusto! Dolores expedita iste eaque aperiam incidunt iure blanditiis distinctio
             fugit quas cumque praesentium tempora dolorem, nam nobis et fugiat, eligendi facilis saepe voluptatum vel
@@ -47,9 +41,10 @@
             porro architecto voluptas numquam, dicta voluptates quisquam aliquam unde autem iure vitae repellat quae nam
             odit temporibus suscipit magni eligendi nobis quos animi? Veniam harum doloribus error qui. Quidem,
             blanditiis quasi. Laudantium laboriosam nisi delectus doloribus molestias, sequi pariatur architecto placeat
-            porro vel itaque eius ex, illum minima cupiditate! Necessitatibus debitis cupiditate nemo!</p>
+            porro vel itaque eius ex, illum minima cupiditate! Necessitatibus debitis cupiditate nemo!
+          </p>
         </div>
       </div>
     </div>
-</div>
+  </div>
 </div>
