@@ -1,100 +1,76 @@
-<button (click)="logout()">logout</button>
-<div class="outer-div border">
-    <div class="container-fluid border">
-        <div class="row">
-            <div class="d-flex justify-content-end">
-                <!-- <button (click)="gotoHome()" style="width: 80px;height: 40px; margin-top: 25px;margin-right: 25px; color: white;background-color: #2196F3;border-radius: 8%; border:#2196F3;">Home</button> -->
-                <!-- <button (click)=logout() style="width: 80px;height: 40px; margin-top: 25px;margin-right: 25px;color: white;background-color: #2196F3;border-radius: 8%; border:#2196F3;">Log out</button> -->
-            </div>
-            <div class="col-10">
-                <div class="d-flex justify-content-start" style="margin: 20px;padding-left: 10px;">
-                    <div>
-                        <!-- <img [src]="imgurl" alt="" class="rounded-circle"
-                        style="width: 150px;height: 150px;margin: 10px;align-items: center;">
-                        <h3 style="width: 200px;">{{userProfile['username']}}</h3>
-                        <p style="font-weight: 700;">{{userProfile['dialog']}}</p>                -->
-                    </div>
-                    <div class="col-md-8" style="margin-left: 140px;">
-                        <div class="inner-content" style="margin-top: 80px;">
-                            <div class="row">
-                                <div class="col-md-4">
-                                   <button class="btn">Post</button>
-                                   <!-- <h6 class="num">{{userProfile['activity']['postCount']}}</h6> -->
-                                </div>
-                                <div class="col-md-4">
-                                    <button class="btn">Followers</button>
-                                    <!-- <h6 class="num">{{userProfile['activity']['followersCount']}}</h6> -->
-                                </div>
-                                <div class="col-md-4">
-                                    <button class="btn">Following</button>
-                                    <!-- <h6 class="num">{{userProfile['activity']['followingCount']}}</h6> -->
-                                </div>
-                            </div>                        
-                        </div>
-                    </div>
+<div class="outer-div">
+    <div class="container-fluid">
+      <div class="card-container">
+        <div class="card flex justify-content-center">
+          <p-card [style]="{ width: '100%' }">
+            <ng-template pTemplate="header">
+              <div class="card-header">
+                <div class="buttons-container">
+                    <button (click)="gotoHome()" class="btn">Home</button>
+                    <button (click)="logout()" class="btn">Logout</button>
+                  </div>
+                <div class="profile-image-container">
+                  <img class="rounded-circle profile-image" alt="Card" [src]="imgurl" />
                 </div>
-                <!-- <i class="pi pi-pencil" (click)="edit()"  style="font-weight: 600; cursor: pointer; font-size: 1rem; margin-bottom: 20px; margin-left: 20px;"> Edit</i> -->
+                <div class="profile-stats">
+                  <div class="inner-content">
+                    <div class="row">
+                      <div class="col-4 width">
+                        <button class="abtn">Post</button>
+                        <h6 class="num">0</h6>
+                      </div>
+                      <div class="col-4 width">
+                        <button class="abtn">Followers</button>
+                        <h6 class="num">0</h6>
+                      </div>
+                      <div class="col-4 width">
+                        <button class="abtn">Following</button>
+                        <h6 class="num">0</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+            <div class="profile-details">
+              <h3>{{shopProfile['username']}}</h3>
+              <p class="address">{{shopProfile['address']}}</p>
             </div>
+          </p-card>
         </div>
+      </div>
     </div>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-6" id="personalDetails" hidden>
-                <form>
-                    <div class="form-group">
-                        <label class="label" for="Name">Username</label>
-                        <!-- <input  type="text" name="user-name" class="form-control mr-b-15" placeholder="{{userProfile['username']}}"> -->
-                    </div>
-                    <div class="form-group">
-                        <label class="label" for="Name">Dialog</label>
-                        <!-- <input type="text" name="user-mail" class="form-control mr-b-15" [(ngModel)]="dialog" placeholder="{{userProfile['dialog']}}"> -->
-                    </div>
-                    <div class="form-group">
-                        <label class="label" for="Name">Email</label>
-                        <input type="text" name="user-address" class="form-control mr-b-15">
-                    </div>
-                </form>
-                <!-- <button *ngIf="enablesave" (click)="savedetails()" style="width: 80px;height: 40px;color: white;background-color: #2196F3;border-radius: 8%; border:#2196F3;margin: 5px;">Save</button> -->
+      <div class="row">
+        <p-tabView>
+            <p-tabPanel header="Admin">
                 <div>
-                    <label for="ProfilePhoto">Profile Image</label>
-                    <!-- <p-fileUpload 
-                        name="demo[]" 
-                        [customUpload]="true"
-                        (uploadHandler)="onUploadfile($event)"
-                        accept="image/*" 
-                        [maxFileSize]="1000000">
-                            <ng-template pTemplate="content">
-                                <ul *ngIf="uploadedFiles.length">
-                                    <li *ngFor="let file of uploadedFiles">
-                                        {{ file.name }} - {{ file.size }} bytes
-                                    </li>
-                                </ul>
-                            </ng-template>
-                    </p-fileUpload> -->
+                    <p>
+                        Admin panel
+                    </p>
                 </div>
-            </div>
-            <div class="col-12" id="gallery">
-                <p-tabView> 
-                    <p-tabPanel header="Pics">
-                        <button style="width: 80px;height: 40px;color: white;background-color: #2196F3;border-radius: 8%; border:#2196F3;">+</button>
-                        <p>
-                            Lorem ipsum dolor sit amet...
-                        </p>
-                    </p-tabPanel>
-                    <p-tabPanel header="Videos">
-                        <button style="width: 80px;height: 40px;color: white;background-color: #2196F3;border-radius: 8%; border:#2196F3;">+</button>
-                        <p>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...
-                        </p>
-                    </p-tabPanel>
-                    <p-tabPanel header="Quotes">
-                        <button style="width: 80px;height: 40px;color: white;background-color: #2196F3;border-radius: 8%; border:#2196F3;">+</button>
-                        <p>
-                            At vero eos et accusamus et iusto odio dignissimos...
-                        </p>
-                    </p-tabPanel>
-                </p-tabView>
-            </div>
-        </div>
+            </p-tabPanel>
+            <p-tabPanel header="activity">
+                <p-scrollPanel [style]="{ width: '100%', height: '720px' }">
+                    <div id="activity">
+                      <p-tabView>
+                        <p-tabPanel header="Pics">
+                          <button class="actibutton">+</button>
+                          <p>Lorem ipsum dolor sit amet...</p>
+                        </p-tabPanel>
+                        <p-tabPanel header="Videos">
+                          <button class="actibutton">+</button>
+                          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...</p>
+                        </p-tabPanel>
+                        <p-tabPanel header="Quotes">
+                          <button class="actibutton">+</button>
+                          <p>At vero eos et accusamus et iusto odio dignissimos...</p>
+                        </p-tabPanel>
+                      </p-tabView>
+                    </div>
+                  </p-scrollPanel>
+            </p-tabPanel>
+        </p-tabView>
+      </div>
     </div>
-</div>
+  </div>

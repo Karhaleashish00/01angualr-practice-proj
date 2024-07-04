@@ -43,4 +43,7 @@ export class HttpService {
     formData.append('_id',localStorage.getItem('userid'))
     return this.http.post(this.baseUrl + '/setCustomerProfileImage',formData,)
   }
+  getShopProfile(object){
+    return this.http.post(this.baseUrl + '/getShopProfile',object)
+  }
 }
