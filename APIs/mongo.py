@@ -15,6 +15,8 @@ mongo = PyMongo(app)
 app.config['SECRET_KEY'] = '123'
 
 UPLOAD_FOLDER = "D:\\0Angular-practice\\01angualr-practice-proj\\src\\assets"
+POST_FOLDER = "D:\\0Angular-practice\\01angualr-practice-proj\\src\\assets\\userpost"
+app.config['POST_FOLDER'] = POST_FOLDER
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif'}
 
@@ -223,5 +225,44 @@ def get_shop_profile():
     except:
         return jsonify({'message': 'something went wrong'}), 500
 
+@app.route("/setCustomerPost",methods=['GET','POST'])
+def set_cust_post():
+   file = request.files['file']
+   obj_id = ObjectId(request.form['_id'])  
+   user = mongo.db.custRegister.find_one({'_id':obj_id})
+   count = int(user['activity']['postCount'])
+   count = count + 1
+   if file.filename == '':
+        return jsonify({"error": "No selected file"}), 400
+   if file and allowed_file(file.filename):   
+        filename = secure_filename(file.filename)
+        desc = request.form['desc']
+        filepath = os.path.join(app.config['POST_FOLDER'], filename)
+        file.save(filepath)
+        postdetails = {
+            "filename": filename,
+            "filepath": filepath,
+            "desc": desc
+        }
+        update = {
+            '$push': {'postimages': postdetails},
+            '$inc': {'activity.postCount': count}
+        }
+        result = mongo.db.custRegister.update_one({'_id': obj_id}, update)
+        if result.modified_count > 0:
+            return {'message': "Modified sucessfully"}, 200
+        else:
+            return {'message': "something went wrong"}, 500     
+   else:
+        return jsonify({"error": "File type not allowed"}), 400
+   
+# @app.route("/getcustomerposts",methods = ['GET','POST'])
+# def getcustpost():
+#     obj_id = ObjectId(request.form['_id'])
+#     query = {'_id':obj_id}
+#     user = mongo.db.custRegister.find_one(query)
+#     print(user)
+#     user['_id'] = str(user['_id'])
+#     return jsonify(user)
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,23 @@
+<div class="main">
+    <div class="container">
+        <button class="btn-custom-back" (click)="back()">BACK</button>
+        <div class="row">
+            <div class="col-6">
+                <div class="inner-div1">
+                    <label for="p-fileUpload"><b>Image</b></label><br><br>
+                    <p-fileUpload name="demo[]" [customUpload]="true" (uploadHandler)="onPost($event)" accept="image/*" [maxFileSize]="1000000"></p-fileUpload><br><br>
+                    <label for="textarea"><b>Description</b></label><br><br>
+                    <textarea [(ngModel)]="desc" style="width: 560px; height: 80px;" name="Description" id="postdesc"></textarea>
+                    <button class="btn-custom" (click)="postimage()">Post</button>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="inner-div2">
+                    <div *ngIf="imageUrl">
+                        <img style="width: 400px; height: 400px;" [src]="imageUrl" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

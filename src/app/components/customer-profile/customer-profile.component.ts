@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
 
@@ -17,24 +17,32 @@ private user:{}
 uploadedFiles: any[] = [];
 public userProfile:{}={}
 imgurl = "assets/" + this.userProfile['filename']
+posts:any
 
 constructor(private router:Router,private httpservice: HttpService){  
   const navigation = this.router.getCurrentNavigation();
   const state = navigation?.extras.state
   this.user = state
 }
-
   ngOnInit(): void {
+    // this.httpservice.getcustpost().subscribe((res:any)=>{
+    //     console.log(res)
+    // });
     if(localStorage.getItem('userid')){
       this.httpservice.getCustomerProfile({'_id':localStorage.getItem('userid')}).subscribe((res:any)=>{
         this.userProfile = res.user
         this.imgurl = "assets/" + this.userProfile['filename']
+        this.posts = this.userProfile['postimages']
+        console.log(this.posts);
+        
       });
     }
     else{
       this.httpservice.getCustomerProfile(this.user).subscribe((res:any)=>{        
         this.userProfile = res.user
         this.imgurl = "assets/" + this.userProfile['filename']
+        this.posts = this.userProfile['postimages']
+        console.log(this.posts);  
         localStorage.setItem('userid',this.userProfile['_id'])        
       });
     }
@@ -47,6 +55,9 @@ constructor(private router:Router,private httpservice: HttpService){
   }
   gotoHome(){
     this.router.navigateByUrl('/')
+  }
+  gotoimgpost(){
+    this.router.navigateByUrl('imagepost')
   }
 
   savedetails(){

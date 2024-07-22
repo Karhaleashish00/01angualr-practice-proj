@@ -21,6 +21,7 @@ import { PasswordModule } from 'primeng/password';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ShopProfileComponent } from './components/shop-profile/shop-profile.component';
 import { SplitterModule } from 'primeng/splitter';
+import { ImagepostComponent } from './components/customer-profile/imagepost/imagepost.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -30,7 +31,8 @@ const routes: Routes = [
   { path: 'shopLogin' , component:ShopLoginComponent},
   { path: 'shopRegister' , component:ShopRegisterComponent},
   { path: 'regmsg', component:RegmsgComponent},
-  { path: 'shopProfile',component:ShopProfileComponent}
+  { path: 'shopProfile',component:ShopProfileComponent},
+  { path: 'imagepost', component:ImagepostComponent}
 ];
 
 @NgModule({
@@ -46,6 +48,7 @@ const routes: Routes = [
     ShopRegisterComponent,
     RegmsgComponent,
     ShopProfileComponent,
+    ImagepostComponent,
   ],
   imports: [
     BrowserModule,

@@ -46,4 +46,16 @@ export class HttpService {
   getShopProfile(object){
     return this.http.post(this.baseUrl + '/getShopProfile',object)
   }
+  setpostimages(object){
+    const formData = new FormData();
+    formData.append('file',object['file']);
+    formData.append('desc',object['desc']);
+    formData.append('_id',localStorage.getItem('userid'));
+    return this.http.post(this.baseUrl + '/setCustomerPost',formData)
+  }
+  // getcustpost(){
+  //   const formData = new FormData();
+  //   formData.append('_id',localStorage.getItem('userid'));
+  //   return this.http.post(this.baseUrl + '/getcustomerposts',formData)
+  // }
 }
