@@ -69,8 +69,10 @@
         <div class="col-12" id="gallery">
           <p-tabView>
             <p-tabPanel header="Pics">
-              <button class="btn-custom">+</button>
-              <p>Lorem ipsum dolor sit amet...</p>
+              <button class="btn-custom" (click)="gotoimgpost()">+</button>
+              <div *ngFor="let image of posts">
+                <img style="display:flex; height: 300px;width: 300px;margin: 10px 10px;padding:10px 10px ;border:solid bisque;" src="assets/userpost/{{image.filename}}" alt="">
+              </div>
             </p-tabPanel>
             <p-tabPanel header="Videos">
               <button class="btn-custom">+</button>
